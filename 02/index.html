@@ -22,6 +22,10 @@
         display: flex;
       }
 
+      header:hover {
+        background-color: bisque;
+      }
+
       .logo div::before {
         content: "logo";
         color: #fff;
@@ -93,6 +97,12 @@
       #hamburger.active span {
         visibility: hidden;
       }
+
+      #awesome {
+        border: 1px solid black;
+        width: 45px;
+        height: auto;
+      }
     </style>
 
     <header>
@@ -113,12 +123,19 @@
           <li>x</li>
         </ul>
       </nav>
+
+      <!-- <input type="text" /> -->
     </header>
+
+    <div id="awesome">CSS IS AWESOME</div>
+
     <script>
-      /*let hamburger = document.querySelector("#hamburger");
-      hamburger.addEventListener("click", (e) => {
-        hamburger.classList.toggle("active");
-      });*/
+      /*
+        let hamburger = document.querySelector("#hamburger");
+        hamburger.addEventListener("click", (e) => {
+          hamburger.classList.toggle("active");
+        });
+      */
       $(document).ready(() => {
         console.log("ready");
         $("#hamburger").click(() => {
