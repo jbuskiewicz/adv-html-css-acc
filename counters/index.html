@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+  </head>
+  <body>
+    <style>
+      body {
+        counter-reset: section;
+        counter-reset: test;
+      }
+
+      h3::before {
+        counter-increment: section;
+        counter-increment: test;
+        /*content: attr(data-title);*/
+        content: counter(test);
+      }
+      /*
+        domyslnie opacity 0
+        na hover - opacity 1
+        data-title przekazujemy do wszystkich elementow
+        data-title na hover pokazujemy na prawo od naszego elementu
+        position relative i absolute, pseudoelementy, transition, opacity, attr()
+
+        h3:hover::before{}
+      */
+    </style>
+
+    <h3 data-title="Hello world: ">Introduction</h3>
+    <h3>Body</h3>
+    <h3>Conclusion</h3>
+  </body>
+</html>
