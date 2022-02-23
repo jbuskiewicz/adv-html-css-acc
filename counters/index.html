@@ -10,15 +10,27 @@
     <style>
       body {
         counter-reset: section;
+        counter-reset: test;
       }
 
       h3::before {
         counter-increment: section;
-        content: "Section " counter(section) ": ";
+        counter-increment: test;
+        /*content: attr(data-title);*/
+        content: counter(test);
       }
+      /*
+        domyslnie opacity 0
+        na hover - opacity 1
+        data-title przekazujemy do wszystkich elementow
+        data-title na hover pokazujemy na prawo od naszego elementu
+        position relative i absolute, pseudoelementy, transition, opacity, attr()
+
+        h3:hover::before{}
+      */
     </style>
 
-    <h3>Introduction</h3>
+    <h3 data-title="Hello world: ">Introduction</h3>
     <h3>Body</h3>
     <h3>Conclusion</h3>
   </body>
