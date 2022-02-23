@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- position -->
+    <!-- pseudoklasy/elementy -->
+    <!-- jednostki -->
+
+    <style>
+      header {
+        border: 1px solid black;
+        display: flex;
+      }
+
+      .logo div::before {
+        content: "logo";
+        color: #fff;
+      }
+
+      .logo div::after {
+        content: "after";
+        color: red;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .logo div {
+        width: 200px;
+        height: 80px;
+        background-color: rgb(106, 107, 107);
+      }
+
+      #hamburger {
+        width: 20px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #hamburger span {
+        height: 1px;
+        width: 100%;
+        background-color: #000;
+      }
+    </style>
+
+    <header>
+      <div class="logo">
+        <div>content</div>
+      </div>
+
+      <nav id="hamburger">
+        <span></span>
+      </nav>
+
+      <nav>
+        <ul>
+          <li>x</li>
+          <li>x</li>
+          <li>x</li>
+          <li>x</li>
+          <li>x</li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
+
+<!-- position absolute - pozycjonowanie wedle elementu <body>, chyba ze na drodze body<->poz. element znajdzie sie tag z position: relative (pkt odniesienia) -->
+
+<!-- jezeli wewnatrz elementu z position absolute dodamy kolejny z position absolute to logika sie powtarza, ale glownym pkt odniesienia nie bedzie body, ale element nadrzedny z position absolute -->
