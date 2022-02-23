@@ -5,12 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+    crossorigin="anonymous"
+  ></script>
   </head>
   <body>
     <!-- position -->
     <!-- pseudoklasy/elementy -->
     <!-- jednostki -->
-
+<script>
+      $(document).ready(() => {
+        console.log("ready");
+        $("#hamburger").click(() => {
+          $("#hamburger").toggleClass("active");
+        });
+      });
+</script>
     <style>
       header {
         border: 1px solid black;
@@ -24,7 +36,7 @@
 
       .logo div::after {
         content: "after";
-        color: red;
+        color: red; 
       }
 
       nav ul {
@@ -41,39 +53,62 @@
       }
 
       #hamburger {
-        width: 20px;
-        height: 100%;
+        width: 25px;
+        height: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        cursor: pointer;
+        top: 200px;
+      }
+      #hamburger::before,
+      #hamburger::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        transition: 0.5s;
+      }
+      #hamburger::before {
+        top: 0;
       }
 
+      #hamburger::after {
+        bottom: 0;
+      }
       #hamburger span {
-        height: 1px;
+        height: 2px;
         width: 100%;
         background-color: #000;
       }
+      #hamburger.active::before {
+        transform: rotate(-315deg);
+        top: 50%;
+      }
+
+      #hamburger.active::after {
+        transform: rotate(315deg);
+        top: 50%;
+      }
+
+      #hamburger.active span {
+        visibility: hidden;
+      }
+
     </style>
 
     <header>
       <div class="logo">
         <div>content</div>
       </div>
-
       <nav id="hamburger">
         <span></span>
       </nav>
 
-      <nav>
-        <ul>
-          <li>x</li>
-          <li>x</li>
-          <li>x</li>
-          <li>x</li>
-          <li>x</li>
-        </ul>
-      </nav>
     </header>
+
   </body>
 </html>
 
