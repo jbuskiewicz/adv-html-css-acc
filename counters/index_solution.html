@@ -12,8 +12,13 @@
         counter-reset: section;
       }
 
-      h3::after {
+      h3::before {
         counter-increment: section;
+        content: counter(section);
+        opacity: 1;
+        margin: 10px;
+      }
+      h3::after {
         content: attr(data-title);
         opacity: 0;
         margin: 10px;
