@@ -1,64 +1,74 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  box-sizing: border-box;
 }
 
+/* Style the body */
 body {
-  /* background-color: cadetblue; */
+  font-family: Arial;
+  margin: 0;
 }
 
-p {
-  border: 5px solid green;
-  padding: 10px;
+/* Header/logo Title */
+.header {
+background-color: rgba(84, 194, 157, 0.623);
+text-align: center;
+color: white;
+padding: 60px;
 }
 
-p {
-  /* color: tomato; */
+/* Style the top navigation bar */
+.navbar {
+background-color: rgb(63, 62, 62);
+display: flex;
+justify-content: left;
+gap: 20px;
 }
 
-p {
-  /* color: cadetblue !important; */
+/* Style the navigation bar links */
+.navbar a {
+color: white;
+text-align: center;
+text-decoration: none;
+padding: 14px;
+
 }
 
-p#last {
-  color: brown;
-}
-
-#last {
-  color: goldenrod;
-}
-
-.flexboxowy {
-}
-
-.flexboxowy ul {
-  list-style: none;
-  display: flex; /* render lewo-prawo */
-  flex-direction: row-reverse; /* render prawo-lewo */
-  flex-direction: column;
-  flex-direction: column-reverse;
-}
-
-.flexboxowy ul li {
-  width: 100px;
-  height: 50px;
-  background-color: thistle;
-  border: 1px solid black;
-  margin: 2px 4px;
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 12px;
-    /* display: flex; */
+/* Change color on hover */
+.navbar a:hover {
+  background-color: white;
+  color: black;
   }
+
+/* Column container */
+.row {
+display: flex;
+flex-wrap: wrap;
 }
 
-@media screen and (min-width: 1200px) {
-  body {
-    background-color: coral;
-  }
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+background-color: rgb(214, 212, 212);
+flex: 30%;
+padding: 20px;
+}
+
+/* Main column */
+.main {
+flex: 70%;
+background-color: white;
+padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+ background-color: rgb(165, 164, 164);
+ padding: 20px;
+ width: 100%;
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  background-color: rgb(199, 195, 195);
+  text-align: center;
 }
