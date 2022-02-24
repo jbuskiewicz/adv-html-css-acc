@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+        width: 300px;
+        height: 100px;
+        background-color: yellow;
+        border: 1px solid black;
+      }
+
+      .translated {
+        transform: translate(50px, 100px);
+      }
+
+      .static {
+        width: 60px;
+        height: 60px;
+        background-color: skyblue;
+      }
+
+      .moved {
+        transform: translate(10px, 10px);
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>translate()</h1>
+
+    <div class="translated">
+      Element przesunięty o 50px w prawo oraz 100px w dół względem swojego
+      położenia.
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+    <div class="static">Static</div>
+    <div class="moved">Moved</div>
+    <div class="static">Static</div>
+  </body>
+</html>
