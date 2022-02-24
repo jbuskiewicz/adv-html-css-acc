@@ -45,11 +45,8 @@ function dragLeave() {
 }
 
 function dragDrop() {
-  console.log(this.dataset);
   this.className = "empty";
   this.append(draggableEl);
-
-  console.log(draggableEl.parentElement.dataset);
 
   const request = JSON.stringify(appState.items);
 }
