@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+        margin: 150px;
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+        border: 1px solid black;
+        transform: scale(2, 3);
+      }
+
+      div#small {
+        margin: 150px;
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+        border: 1px solid black;
+        transition: 0.5s;
+        transform: scale(2);
+        max-width: 100px;
+        max-height: 100px;
+      }
+
+      #submit {
+        background-color: green;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        width: 100px;
+        height: 120px;
+        border-radius: 10px;
+        padding: 10px 20px;
+        transition: 0.5s;
+      }
+
+      #submit:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>scale()</h1>
+
+    <div>
+      Ten element div jest 2x szerszy i 3x wyzszy niz jego oryginalna wersja
+    </div>
+
+    <div id="small">Ten element div jest zmniejszony o 50%</div>
+
+    <button id="submit">Click</button>
+  </body>
+</html>
