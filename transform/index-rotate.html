@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+        width: 300px;
+        height: 100px;
+        background-color: yellow;
+        border: 1px solid black;
+      }
+
+      div#myDiv {
+        transform: rotate(20deg);
+      }
+      div#myDivCc {
+        transform: rotate(-20deg);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>rotate()</h1>
+
+    <div>Element div bez transformacji</div>
+
+    <div id="myDiv">
+      Element div obrocony o 20 stopni zgodnie z ruchem wskazowek zegara
+    </div>
+
+    <div id="myDivCc">
+      Element div obrocony o 20 stopni przeciwnie do ruchu wskazowek zegara
+    </div>
+  </body>
+</html>
