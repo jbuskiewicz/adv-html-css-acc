@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body{
+      font-size: large;
+    }
+.tooltip  {
+  display: inline-block;
+  position: relative;
+  text-decoration:underline;
+  color:black;
+}
+.tooltiptext{
+  visibility: hidden;
+  border-radius: 5%;
+  background-color: black;
+  color: white;
+  left: 105%;
+  top: 100px;
+  position: absolute;
+  width: 100px;
+  transition: 1s;
+  z-index:0;
+}
+.tooltip:hover .tooltiptext{
+  visibility: visible;
+  z-index: 1;
+  top: 0;
+}
+
+  </style>
+  <body style="text-align: center">
+    <h2>Right Tooltip</h2>
+    <p>Move the mouse over the text below:</p>
+
+    <div class="tooltip">
+      Hover over me
+      <span class="tooltiptext">Tooltip text</span>
+    </div>
+  </body>
+</html>
