@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
+  font-family: 'Roboto' sans-serif;
+}
+body{
+  margin: 0;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+}
+
+canvas{
+  border: 2px solid steelblue;
+}
+
+.toolbox{
+  background-color: steelblue;
+  border: 1px solid slateblue;
+  display:flex;
+  width:804px;
+  padding: 1rem /*root element <html> - font size  * liczba*/;
+}
+
+.toolbox > *{
+  border: 0;
+  background-color: white;
+  height:50px;
+  width: 50px;
+  font-size: 2rem; /*ciagle do <html>*/
+  cursor: pointer;
+  padding:0.25rem;
+  margin: 0.25rem;
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.toolbox>*:last-child{
+  margin-left: auto;
+}
