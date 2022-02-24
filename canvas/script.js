@@ -15,13 +15,25 @@ let x;
 let y;
 let color = colorEl.value;
 
+const canvasContext = canvas.getContext("2d");
+
 canvas.addEventListener("mousedown", (event) => {
   isPressed = true;
+
+  x = event.offsetX;
+  y = event.offsetY;
 });
 
 canvas.addEventListener("mousemove", (event) => {
   if (isPressed) {
-    console.log(e.offsetX, e.offsetY);
+    const x2 = event.offsetX;
+    const y2 = event.offsetY;
+
+    drawCricle(x2, y2);
+    drawLine(x, y, x2, y2);
+
+    x = x2;
+    y = y2;
   }
 });
 
@@ -30,3 +42,25 @@ document.addEventListener("mouseup", () => {
   x = undefined;
   y = undefined;
 });
+
+function drawCricle(x, y) {
+  canvasContext.beginPath();
+  canvasContext.arc(x, y, size, 0, Math.PI * 2);
+  canvasContext.fillStyle = color;
+  canvasContext.fill();
+}
+
+function drawLine(x1, y1, x2, y2) {
+  canvasContext.beginPath();
+  canvasContext.moveTo(x1, y1);
+  canvasContext.lineTo(x2, y2);
+  canvasContext.strokeStyle = color;
+  canvasContext.lineWidth = size * 2;
+  canvasContext.stroke();
+}
+
+colorEl.addEventListener("change", (e) => {
+  color = e.target.value;
+});
+
+// .clearRect(0,0,canvaswidth, canvasheight);
