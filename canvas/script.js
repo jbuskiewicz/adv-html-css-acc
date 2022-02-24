@@ -59,8 +59,30 @@ function drawLine(x1, y1, x2, y2) {
   canvasContext.stroke();
 }
 
+function updateSizeInDom() {
+  sizeEl.innerText = size;
+}
+
 colorEl.addEventListener("change", (e) => {
   color = e.target.value;
 });
 
-// .clearRect(0,0,canvaswidth, canvasheight);
+decreaseBtn.addEventListener("click", () => {
+  size -= 1;
+
+  if (size < 5) {
+    size = 5;
+  }
+
+  updateSizeInDom();
+});
+
+increaseBtn.addEventListener("click", () => {
+  size += 1;
+  updateSizeInDom();
+});
+
+clearEl.addEventListener("click", () => {
+  //   console.log(canvas.offsetHeight, canvas.height);
+  canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+});
