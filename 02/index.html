@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- position -->
@@ -15,6 +20,10 @@
       header {
         border: 1px solid black;
         display: flex;
+      }
+
+      header:hover {
+        background-color: bisque;
       }
 
       .logo div::before {
@@ -41,17 +50,58 @@
       }
 
       #hamburger {
-        width: 20px;
-        height: 100%;
+        width: 25px;
+        height: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        cursor: pointer;
+        top: 200px;
+      }
+
+      #hamburger::before,
+      #hamburger::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        transition: 0.5s;
+      }
+
+      #hamburger::before {
+        top: 0;
+      }
+
+      #hamburger::after {
+        bottom: 0;
       }
 
       #hamburger span {
-        height: 1px;
+        height: 2px;
         width: 100%;
         background-color: #000;
+      }
+
+      #hamburger.active::before {
+        transform: rotate(-315deg);
+        top: 50%;
+      }
+
+      #hamburger.active::after {
+        transform: rotate(315deg);
+        top: 50%;
+      }
+
+      #hamburger.active span {
+        visibility: hidden;
+      }
+
+      #awesome {
+        border: 1px solid black;
+        width: 45px;
+        height: auto;
       }
     </style>
 
@@ -73,7 +123,26 @@
           <li>x</li>
         </ul>
       </nav>
+
+      <!-- <input type="text" /> -->
     </header>
+
+    <div id="awesome">CSS IS AWESOME</div>
+
+    <script>
+      /*
+        let hamburger = document.querySelector("#hamburger");
+        hamburger.addEventListener("click", (e) => {
+          hamburger.classList.toggle("active");
+        });
+      */
+      $(document).ready(() => {
+        console.log("ready");
+        $("#hamburger").click(() => {
+          $("#hamburger").toggleClass("active");
+        });
+      });
+    </script>
   </body>
 </html>
 
