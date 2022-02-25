@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="" id="form">
+      <div class="formRow">
+        <label for="formData">
+          Data: <input class="error" type="date" name="" id="formData" />
+        </label>
+        <span class="errorMessage">Data jest wymagana</span>
+      </div>
+      <div class="formRow">
+        <label for="formTel">
+          Tel:
+          <input
+            type="tel"
+            name=""
+            value="123"
+            id="formTel"
+            pattern="[0-9]{3,3}"
+            required
+            placeholder="Podaj nr telefonu"
+          />
+        </label>
+      </div>
+      <input type="range" name="" id="" />
+      <input type="text" name="" id="" />
+      <input type="email" name="email" id="" required value="123@wp.pl" />
+      <input type="color" name="" id="" />
+      <br /><br /><br />
+      <input type="file" name="files[]" id="fileInput" multiple />
+      <div id="dropZone">Drop files here</div>
+      <br /><br /><br />
+      <input type="submit" value="Send" />
+      <input
+        type="number"
+        name="number"
+        id=""
+        max="50"
+        min="10"
+        value="10"
+        required
+      />
+      <input type="reset" name="reset" value="reset" />
+    </form>
+    <script src="./script.js"></script>
+  </body>
+</html>
