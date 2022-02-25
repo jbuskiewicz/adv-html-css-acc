@@ -60,7 +60,11 @@ jQuery(document).ready(() => {
 
   const createMovieTile = (poster_path, title, vote_average, overview) => {
     const container = $('<div class="movie"></div>');
-    container.append(`<img src="${IMG_URL}${poster_path}" alt="${title}" />`);
+    container.append(
+      poster_path
+        ? `<img src="${IMG_URL}${poster_path}" alt="${title}" />`
+        : "<div class='fakeimg'>poster not found</div>"
+    );
     container.append(`
     <div class="movie-info">
         <h3>${title}</h3>
@@ -85,9 +89,37 @@ jQuery(document).ready(() => {
     // zmieniamy zawartosc DOM na response z formularza
     const xhr = new XMLHttpRequest();
     const searchValue = $(".search").val();
-    xhr.open("GET", `${SEARCH_API}${searchValue}`, true);
 
-    //
+    xhr.open("GET", `${SEARCH_API}${searchValue}`, true);
+    xhr.responseType = "json";
+
+    xhr.addEventListener("error", () => {
+      console.error("Request failed");
+    });
+
+    xhr.addEventListener("progress", (e) => {
+      if (e.lengthComputable) {
+        const progress = (e.loaded / e.total) * 100;
+        console.log(progress);
+      } else {
+        console.log("Progress nie jest mozliwy do wyliczenia");
+      }
+    });
+
+    xhr.addEventListener("load", () => {
+      if (xhr.status === 200) {
+        // console.log(JSON.parse(xhr.response));
+        const { results } = xhr.response;
+
+        $("#main").empty();
+        for (const movie of results) {
+          const { title, vote_average, overview, poster_path } = movie;
+          $("#main").append(
+            createMovieTile(poster_path, title, vote_average, overview)
+          );
+        }
+      }
+    });
 
     xhr.send(null);
   });

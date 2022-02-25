@@ -109,6 +109,12 @@ header .search {
   color: #fff;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .search:focus {
   outline: none;
   background-color: var(--primary-color);
@@ -116,6 +122,18 @@ header .search {
 
 .search::placeholder {
   color: #7378c5;
+}
+
+.fakeimg {
+  width: 100%;
+  height: 450px;
+  background-color: #ccc;
+  font-weight: bold;
+  font-size: 15px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 7-1 */
