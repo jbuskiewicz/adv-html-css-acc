@@ -30,6 +30,7 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 3rem;
 }
 
 .movie {
@@ -79,9 +80,43 @@ main {
   margin-top: 0;
 }
 
+.movie-info > span.green {
+  color: lightgreen;
+}
+
+.movie-info > span.orange {
+  color: orange;
+}
+
+.movie-info > span.red {
+  color: red;
+}
+
 .movie-info span {
   background-color: var(--primary-color);
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   font-weight: bold;
 }
+
+/* header > input[type=text]  */
+header .search {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+.search:focus {
+  outline: none;
+  background-color: var(--primary-color);
+}
+
+.search::placeholder {
+  color: #7378c5;
+}
+
+/* 7-1 */
+/* SASS - nesting + BEM */

@@ -4,6 +4,8 @@ jQuery(document).ready(() => {
     "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1";
 
   const IMG_URL = "https://image.tmdb.org/t/p/w1280";
+  const SEARCH_API =
+    'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query="';
 
   // najpierw otwieramy polaczenie - konfigurujemy endpoint, metode i sposob (sync/async)
 
@@ -69,9 +71,24 @@ jQuery(document).ready(() => {
         </div>
     </div>`);
     $(container).click(function () {
-      console.log(this);
       $(this).children().find(".overview").toggleClass("active");
+    });
+    $(container).dblclick(() => {
+      $(container).remove();
     });
     return container;
   };
+
+  $("#form").submit((e) => {
+    e.preventDefault();
+    // wysylamy xhr request z wartoscia z formularza na odpowiedni adres API
+    // zmieniamy zawartosc DOM na response z formularza
+    const xhr = new XMLHttpRequest();
+    const searchValue = $(".search").val();
+    xhr.open("GET", `${SEARCH_API}${searchValue}`, true);
+
+    //
+
+    xhr.send(null);
+  });
 });
