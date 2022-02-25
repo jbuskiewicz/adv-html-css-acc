@@ -83,6 +83,10 @@ jQuery(document).ready(() => {
     return container;
   };
 
+  // fetch("url").then(data => data.json()).then(data => {
+  //   // data jest juz przetworzona i gotowa do wykorzystania w DOM
+  // }).catch()
+
   $("#form").submit((e) => {
     e.preventDefault();
     // wysylamy xhr request z wartoscia z formularza na odpowiedni adres API
